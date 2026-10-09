@@ -1,0 +1,8 @@
+import type {Metadata} from 'next';
+import PageIntro from '@/components/ui/PageIntro';
+import ShowCard from '@/components/ui/ShowCard';
+import {shows,timeLabel} from '@/data/schedule';
+import Icon from '@/components/ui/Icon';
+import WhatsAppButton from '@/components/whatsapp/WhatsAppButton';
+export const metadata:Metadata={title:'Shows & presenters'};
+export default function Shows(){return <div className="container page-bottom"><PageIntro kicker="THE VOICES. THE VIBES. THE 360 FAMILY." title="Meet your new favourites." description="A little music, a little mischief and a whole lot of heart. These are the shows that bring us together."/><p className="mb-6 text-xs text-muted">Meet our demo lineup · Presenter details will be confirmed before launch.</p><div className="grid gap-5 md:grid-cols-3">{shows.slice(0,3).map(show=><ShowCard key={show.id} show={show}/>)}</div><div className="mt-12 grid gap-5 md:grid-cols-2">{shows.map(s=><article key={s.id} id={s.id} className="panel scroll-mt-8"><div className="flex items-center gap-4"><div className="avatar" aria-label={`Placeholder avatar for ${s.host}`}>{s.host.split(' ').slice(0,2).map(w=>w[0]).join('')}</div><div><p className="eyebrow !mb-1">{s.category}</p><h2 className="text-xl font-bold">{s.name}</h2><p className="mt-1 text-xs text-muted">with {s.host}</p></div></div><p className="body-copy my-5">{s.description}</p><p className="flex items-center gap-2 text-xs text-muted"><Icon name="calendar" className="h-4 w-4"/>{s.days.length===7?'Every day':s.days.join(', ')} · {timeLabel(s.startTime)} – {timeLabel(s.endTime)} GMT</p><div className="mt-6"><WhatsAppButton type="shoutout">Send the crew a shoutout</WhatsAppButton></div></article>)}</div></div>}

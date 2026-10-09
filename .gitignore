@@ -1,0 +1,16 @@
+node_modules/
+.next/
+.env*
+!.env.example
+.vercel/
+public/sw.js
+public/workbox-*.js
+public/worker-*.js
+*.tsbuildinfo
+checks/*.png
+uploads/
+*.zip
+.DS_Store
+.config/
+.sudo_as_admin_successful
+checks/

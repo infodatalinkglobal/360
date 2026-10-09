@@ -1,0 +1,1 @@
+export default function PageIntro({kicker,title,description}:{kicker:string;title:string;description:string}){return <div className="page-intro"><p className="eyebrow text-brand">{kicker}</p><h1>{title}</h1><p>{description}</p></div>}

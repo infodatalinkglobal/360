@@ -1,0 +1,3 @@
+import Link from 'next/link';
+import Logo from './Logo';
+export default function Footer(){return <footer className="site-footer container"><div className="flex flex-wrap items-center justify-between gap-6"><Logo/><p className="text-xs text-muted">From Ghana. For the world. <span className="ml-2">🇬🇭</span></p><div className="flex gap-6 text-xs text-muted"><Link href="/about">Our story</Link><Link href="/contact">Get in touch</Link></div></div><div className="mt-7 flex flex-wrap justify-between gap-3 border-t border-white/[.06] pt-5 text-[10px] text-muted"><p>© {new Date().getFullYear()} 360 Yield Radio Ghana. All rights reserved.</p><p>Made of music. Powered by community.</p></div></footer>}
